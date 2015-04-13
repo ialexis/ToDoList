@@ -13,6 +13,10 @@
 		2CD16E041ADC496200213583 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD16E021ADC496200213583 /* LaunchScreen.xib */; };
 		2CD16E101ADC496300213583 /* ToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD16E0F1ADC496300213583 /* ToDoListTests.m */; };
 		2CD16E1C1ADC4A4E00213583 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD16E1B1ADC4A4E00213583 /* main.storyboard */; };
+		2CD16E1F1ADC539200213583 /* IAATaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD16E1E1ADC539100213583 /* IAATaskModel.m */; };
+		2CD16E231ADC548C00213583 /* IAAListTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD16E221ADC548C00213583 /* IAAListTaskModel.m */; };
+		2CD16E261ADC58E900213583 /* IAATasksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD16E251ADC58E900213583 /* IAATasksTableViewController.m */; };
+		2CD16E2A1ADC686800213583 /* IAANewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD16E291ADC686800213583 /* IAANewTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,14 @@
 		2CD16E0E1ADC496300213583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CD16E0F1ADC496300213583 /* ToDoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoListTests.m; sourceTree = "<group>"; };
 		2CD16E1B1ADC4A4E00213583 /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
+		2CD16E1D1ADC539100213583 /* IAATaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAATaskModel.h; sourceTree = "<group>"; };
+		2CD16E1E1ADC539100213583 /* IAATaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAATaskModel.m; sourceTree = "<group>"; };
+		2CD16E211ADC548C00213583 /* IAAListTaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAAListTaskModel.h; sourceTree = "<group>"; };
+		2CD16E221ADC548C00213583 /* IAAListTaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAAListTaskModel.m; sourceTree = "<group>"; };
+		2CD16E241ADC58E900213583 /* IAATasksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAATasksTableViewController.h; sourceTree = "<group>"; };
+		2CD16E251ADC58E900213583 /* IAATasksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAATasksTableViewController.m; sourceTree = "<group>"; };
+		2CD16E281ADC686800213583 /* IAANewTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAANewTaskViewController.h; sourceTree = "<group>"; };
+		2CD16E291ADC686800213583 /* IAANewTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAANewTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,12 +90,14 @@
 		2CD16DF21ADC496200213583 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				2CD16E1B1ADC4A4E00213583 /* main.storyboard */,
+				2CD16E201ADC539600213583 /* Models */,
+				2CD16E271ADC58EE00213583 /* Controllers */,
 				2CD16DF71ADC496200213583 /* AppDelegate.h */,
 				2CD16DF81ADC496200213583 /* AppDelegate.m */,
 				2CD16E001ADC496200213583 /* Images.xcassets */,
 				2CD16E021ADC496200213583 /* LaunchScreen.xib */,
 				2CD16DF31ADC496200213583 /* Supporting Files */,
-				2CD16E1B1ADC4A4E00213583 /* main.storyboard */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -112,6 +126,28 @@
 				2CD16E0E1ADC496300213583 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2CD16E201ADC539600213583 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CD16E1D1ADC539100213583 /* IAATaskModel.h */,
+				2CD16E1E1ADC539100213583 /* IAATaskModel.m */,
+				2CD16E211ADC548C00213583 /* IAAListTaskModel.h */,
+				2CD16E221ADC548C00213583 /* IAAListTaskModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2CD16E271ADC58EE00213583 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2CD16E281ADC686800213583 /* IAANewTaskViewController.h */,
+				2CD16E291ADC686800213583 /* IAANewTaskViewController.m */,
+				2CD16E241ADC58E900213583 /* IAATasksTableViewController.h */,
+				2CD16E251ADC58E900213583 /* IAATasksTableViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,7 +250,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CD16E231ADC548C00213583 /* IAAListTaskModel.m in Sources */,
+				2CD16E1F1ADC539200213583 /* IAATaskModel.m in Sources */,
+				2CD16E2A1ADC686800213583 /* IAANewTaskViewController.m in Sources */,
 				2CD16DF91ADC496200213583 /* AppDelegate.m in Sources */,
+				2CD16E261ADC58E900213583 /* IAATasksTableViewController.m in Sources */,
 				2CD16DF61ADC496200213583 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

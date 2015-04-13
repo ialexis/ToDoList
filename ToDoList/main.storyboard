@@ -2,18 +2,19 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8HP-CO-oUn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Tasks Table View Controller-->
         <scene sceneID="89t-jm-pAh">
             <objects>
-                <tableViewController id="IBT-NH-tda" sceneMemberID="viewController">
+                <tableViewController id="IBT-NH-tda" customClass="IAATasksTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LK4-pZ-oOo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Lpf-98-Zp2">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Lpf-98-Zp2">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lpf-98-Zp2" id="Nia-R2-evT">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -28,7 +29,7 @@
                     <navigationItem key="navigationItem" id="aLo-DR-E4u">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rQZ-pK-nPH">
                             <connections>
-                                <segue destination="SOp-No-WNl" kind="presentation" modalTransitionStyle="coverVertical" id="Uec-zd-oI0"/>
+                                <segue destination="SOp-No-WNl" kind="show" id="Uec-zd-oI0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -37,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="1142" y="390"/>
         </scene>
-        <!--View Controller-->
+        <!--To Do List-->
         <scene sceneID="cWz-ZZ-smx">
             <objects>
-                <viewController id="OWq-xL-vwK" sceneMemberID="viewController">
+                <viewController id="OWq-xL-vwK" customClass="IAANewTaskViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7m-E9-dhb"/>
                         <viewControllerLayoutGuide type="bottom" id="IIg-1x-R0i"/>
@@ -49,19 +50,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jmh-iO-EEB">
-                                <rect key="frame" x="140" y="285" width="332" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jmh-iO-EEB">
+                                <rect key="frame" x="60" y="285" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Jmh-iO-EEB" secondAttribute="centerX" id="K1u-V6-e9T"/>
+                            <constraint firstItem="Jmh-iO-EEB" firstAttribute="width" secondItem="jWr-W7-Myt" secondAttribute="width" multiplier="0.8" id="hPc-aV-g1c"/>
+                            <constraint firstAttribute="centerY" secondItem="Jmh-iO-EEB" secondAttribute="centerY" id="sPQ-cO-qXK"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nHn-6P-5bm">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="save" id="NkN-pY-IWm"/>
+                    <navigationItem key="navigationItem" title="To Do List" id="nHn-6P-5bm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="NkN-pY-IWm">
+                            <connections>
+                                <segue destination="sWE-wg-R9z" kind="unwind" unwindAction="unwindToTaskList:" id="FlZ-RM-Ieu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textFieldView" destination="Jmh-iO-EEB" id="B3T-Q6-EQO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ALe-Ki-ruj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sWE-wg-R9z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2704" y="390"/>
         </scene>
